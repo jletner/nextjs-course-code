@@ -12,9 +12,11 @@ const Todo = ({ title, startDate, endDate, progress, assignedTo }) => {
   };
 
   const handleModalConfirm = () => {
+    console.log(`${title} deleted!`);
     setShowModal(false);
   };
   const handleModalCancel = () => {
+    console.log("Canceled");
     setShowModal(false);
   };
 
@@ -30,7 +32,7 @@ const Todo = ({ title, startDate, endDate, progress, assignedTo }) => {
       {showModal && (
         <Modal onConfirm={handleModalConfirm} onCancel={handleModalCancel} />
       )}
-      {showModal && <Backdrop onClick={handleModalCancel} />}
+      {showModal && <Backdrop onCancel={handleModalCancel} />}
     </div>
   );
 };

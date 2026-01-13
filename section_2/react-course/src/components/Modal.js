@@ -1,4 +1,5 @@
 const Modal = ({ onConfirm, onCancel }) => {
+  // return component
   return (
     <div className="modal">
       <p>Are you sure?</p>
