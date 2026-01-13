@@ -1,7 +1,21 @@
+import { useState } from "react";
+import Modal from "./Modal";
+import Backdrop from "./Backdrop";
+
 const Todo = ({ title, startDate, endDate, progress, assignedTo }) => {
+  // modal state
+  const [showModal, setShowModal] = useState(false);
+
   // helper methods
   const handleDelete = () => {
-    alert(`Deleted ${title}`);
+    setShowModal(true);
+  };
+
+  const handleModalConfirm = () => {
+    setShowModal(false);
+  };
+  const handleModalCancel = () => {
+    setShowModal(false);
   };
 
   // Return component
@@ -13,6 +27,10 @@ const Todo = ({ title, startDate, endDate, progress, assignedTo }) => {
           Delete
         </button>
       </div>
+      {showModal && (
+        <Modal onConfirm={handleModalConfirm} onCancel={handleModalCancel} />
+      )}
+      {showModal && <Backdrop onClick={handleModalCancel} />}
     </div>
   );
 };

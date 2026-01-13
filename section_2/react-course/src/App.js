@@ -5,14 +5,14 @@ function App() {
   return (
     <div>
       <h1>My Todo</h1>
-      {tasks.map((t) => (
+      {tasks.map(({ id, title, startDate, endDate, progress, assignee }) => (
         <Todo
-          key={t.id}
-          title={t.title}
-          startDate={t.startDate}
-          endDate={t.endDate}
-          progress={t.progress}
-          assignedTo={t.assignee}
+          key={id}
+          title={title}
+          startDate={startDate}
+          endDate={endDate}
+          progress={progress}
+          assignedTo={assignee}
         />
       ))}
     </div>
