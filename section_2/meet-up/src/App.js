@@ -10,10 +10,10 @@ function App() {
         <Route path="/" exact={true}>
           <AllMeetupsPage />
         </Route>
-        <Route path="/new-meetup" exact={true}>
+        <Route path="/new-meetup">
           <NewMeetupPage />
         </Route>
-        <Route path="/favorites" exact={true}>
+        <Route path="/favorites">
           <FavoritesPage />
         </Route>
       </Switch>
