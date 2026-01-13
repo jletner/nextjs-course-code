@@ -1,13 +1,20 @@
+import Todo from "./components/Todo";
+import { tasks } from "./data/data";
+
 function App() {
   return (
     <div>
       <h1>My Todo</h1>
-      <div className="card">
-        <h2>TITLE</h2>
-        <div>
-          <button>Delete</button>
-        </div>
-      </div>
+      {tasks.map((t) => (
+        <Todo
+          key={t.id}
+          title={t.title}
+          startDate={t.startDate}
+          endDate={t.endDate}
+          progress={t.progress}
+          assignedTo={t.assignee}
+        />
+      ))}
     </div>
   );
 }
