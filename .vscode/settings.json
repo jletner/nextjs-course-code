@@ -1,4 +1,8 @@
 {
-  "emmet.excludeLanguages": ["markdown", "html"],
-  "emmet.triggerExpansionOnTab": true
+  "emmet.excludeLanguages": ["markdown"],
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "javascript": "jsx",
+    "html": "html"
+  }
 }
