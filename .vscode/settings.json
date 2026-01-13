@@ -1,0 +1,4 @@
+{
+  "emmet.excludeLanguages": ["markdown", "html"],
+  "emmet.triggerExpansionOnTab": true
+}
