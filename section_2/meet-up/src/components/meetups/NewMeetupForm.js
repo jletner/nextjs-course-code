@@ -1,7 +1,7 @@
-import DUMMY_DATA from '../../data/DUMMY_DATA';
 import Card from '../ui/Card'
 import classes from './NewMeetupForm.module.css'
 import { useRef } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 
 const NewMeetupForm = ({ onAddMeetup }) => {
     // properties
@@ -14,7 +14,7 @@ const NewMeetupForm = ({ onAddMeetup }) => {
     const handleSubmitForm = (e) => {
         e.preventDefault();
         const meetupData = {
-            id: "m" + (DUMMY_DATA.length + 1),
+            meetupId: uuidv4(),
             title: enteredTitleRef.current.value,
             image: enteredImageRef.current.value,
             address: enteredAddressRef.current.value,
@@ -46,7 +46,7 @@ const NewMeetupForm = ({ onAddMeetup }) => {
                     <textarea required id="description" ref={enteredDescriptionRef} />
                 </div>
                 <div className={classes.actions}>
-                    <button>Add Meetup</button>
+                    <button type="submit">Add Meetup</button>
                 </div>
             </form>
         </Card>
