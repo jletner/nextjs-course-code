@@ -1,8 +1,13 @@
+import MeetupItem from './MeetupItem'
 import classes from './MeetupList.module.css'
 
-const MeetupList = () => {
+const MeetupList = ({ meetups }) => {
     return (
-        <div>MeetupList</div>
+        <ul className={classes.list}>
+            {meetups.map((m) => (
+                <MeetupItem key={m.id} {...m} />
+            ))}
+        </ul>
     )
 }
 export default MeetupList

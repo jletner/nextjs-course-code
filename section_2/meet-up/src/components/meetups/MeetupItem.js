@@ -4,7 +4,7 @@ const MeetupItem = ({ title, image, address, description }) => {
     return (
         <li className={classes.item}>
             <div className={classes.image}>
-                <img src="" alt="" />
+                <img src={image} alt={title} />
             </div>
             <div className={classes.content}>
                 <h3>{title}</h3>
