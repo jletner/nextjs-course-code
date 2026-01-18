@@ -3,7 +3,7 @@ import Card from '../ui/Card'
 import classes from './NewMeetupForm.module.css'
 import { useRef } from 'react'
 
-const NewMeetupForm = () => {
+const NewMeetupForm = ({ onAddMeetup }) => {
     // properties
     const enteredTitleRef = useRef();
     const enteredImageRef = useRef();
@@ -20,7 +20,8 @@ const NewMeetupForm = () => {
             address: enteredAddressRef.current.value,
             description: enteredDescriptionRef.current.value
         }
-        console.log("DATA", meetupData);
+
+        onAddMeetup(meetupData);
 
     }
 
